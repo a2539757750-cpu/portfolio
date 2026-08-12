@@ -79,38 +79,44 @@ export default function Home() {
         </div>
         <div className="hero-shade" />
 
-        <nav className="nav shell" aria-label="主导航">
-          <a className="brand" href="#home" aria-label="返回首页">
-            <span className="brand-mark">WMG</span>
-            <span>VISUAL / AI DESIGN</span>
-          </a>
-          <div className="nav-links">
-            <a href="#about">关于</a>
-            <a href="#work">项目</a>
-            <a href="#strengths">能力</a>
-          </div>
-          <a className="contact-pill" href="tel:17179882652">
-            联系我 <span>↗</span>
-          </a>
-        </nav>
+        <div className="hero-reference shell">
+          <header className="hero-reference-top">
+            <h1><span>视觉</span><span>设计师</span></h1>
+            <div className="hero-name"><b>王明光</b><i /></div>
+          </header>
 
-        <div className="hero-copy shell">
-          <div className="eyebrow"><i /> OPEN TO OPPORTUNITIES · HANGZHOU</div>
-          <h1>
-            <span>MAKE VISUALS</span>
-            <span className="outline">WORK HARDER.</span>
-          </h1>
-          <div className="hero-bottom">
-            <p>
-              王明光 — 视觉设计师 / AI 设计师 / 电商设计师<br />
-              以策略、三维与新工具，构建具有表现力的商业视觉。
-            </p>
-            <a className="scroll-cue" href="#about" aria-label="继续向下浏览">
-              <span>SCROLL TO EXPLORE</span><b>↓</b>
-            </a>
+          <div className="hero-reference-center">
+            <div className="hero-role">
+              <span>VISUAL DESIGN</span>
+              <strong>视觉设计</strong>
+              <div className="dot-cluster"><i /><i /><i /></div>
+            </div>
+            <div className="hero-portfolio">
+              <span>SELECTED WORKS</span>
+              <strong>作品集</strong>
+              <p>（2026）</p>
+            </div>
+            <div className="hero-side-copy">
+              <p>视觉设计师<br /><b>PORTFOLIO 2026</b></p>
+              <p>作品集<br /><b>VISUAL DESIGN</b></p>
+              <strong>WMG</strong>
+            </div>
+          </div>
+
+          <nav className="category-nav" aria-label="作品分类">
+            <a href="#commercial"><span>商业设计</span><small>COMMERCIAL<br />DESIGN</small></a>
+            <a href="#poster"><span>海报设计</span><small>POSTER<br />DESIGN</small></a>
+            <a href="#keyvisual"><span>主图设计</span><small>KEY VISUAL<br />DESIGN</small></a>
+            <a href="#personal"><span>个人创作</span><small>PERSONAL<br />CREATION</small></a>
+            <a href="#integration"><span>作品整合</span><small>WORK<br />INTEGRATION</small></a>
+          </nav>
+
+          <div className="hero-reference-foot">
+            <span>6 YEARS EXPERIENCE</span>
+            <span>HANGZHOU · CHINA</span>
+            <a href="#about">SCROLL TO EXPLORE ↓</a>
           </div>
         </div>
-        <div className="hero-index">PORTFOLIO — 2026</div>
       </section>
 
       <section className="about section shell" id="about">
@@ -166,7 +172,11 @@ export default function Home() {
           </div>
           <div className="projects">
             {projects.map((project) => (
-              <article className={`project-card ${project.className}`} key={project.no}>
+              <article
+                className={`project-card ${project.className}`}
+                key={project.no}
+                id={project.no === "01" ? "commercial" : project.no === "02" ? "keyvisual" : "personal"}
+              >
                 <div className="project-visual" aria-hidden="true">
                   <div className="scene-label">WANG MINGGUANG © 2026</div>
                   <div className="scene-orbit" />
@@ -185,6 +195,10 @@ export default function Home() {
                 </div>
               </article>
             ))}
+          </div>
+          <div className="category-anchors" aria-label="补充作品分类定位">
+            <span id="poster">海报设计 / POSTER DESIGN</span>
+            <span id="integration">作品整合 / WORK INTEGRATION</span>
           </div>
         </div>
       </section>
