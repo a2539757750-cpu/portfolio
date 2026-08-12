@@ -81,7 +81,7 @@ export default function Home() {
 
         <div className="hero-reference shell">
           <header className="hero-reference-top">
-            <h1><span>视觉</span><span>设计师</span></h1>
+            <h1><span>品牌电商</span><span>视觉设计师</span></h1>
             <div className="hero-name"><b>王明光</b><i /></div>
           </header>
 
