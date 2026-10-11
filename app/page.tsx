@@ -71,7 +71,7 @@ export default function Home() {
     { no: "06", brand: "Z:SEA", title: "控油祛痘洁面详情页视觉", image: "/works/zsea-02.jpg" },
     { no: "07", brand: "Z:SEA", title: "男士面霜详情页视觉", image: "/works/zsea-03.jpg?v=2" },
     { no: "08", brand: "Z:SEA", title: "男士护肤礼盒详情页视觉", image: "/works/zsea-04.jpg" },
-    { no: "09", brand: "EHD", title: "品牌直播活动详情页视觉", image: "/works/ehd-01.jpg" },
+    { no: "09", brand: "Z:SEA", title: "控油祛痘洁面产品视觉", image: "/works/zsea-acne-cleanser.webp" },
     { no: "10", brand: "EHD", title: "定型喷雾详情页视觉", image: "/works/ehd-02.jpg" },
     { no: "11", brand: "EHD", title: "祛痘精华产品详情页视觉", image: "/works/ehd-03.jpg" },
     { no: "12", brand: "SDX", title: "紧致抗纹产品详情页视觉", image: "/works/sdx-01.jpg" },
