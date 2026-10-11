@@ -63,14 +63,18 @@ const strengths = [
 
 export default function Home() {
   const workGallery = [
-    { no: "01", brand: "Z:SEA", title: "多效修护产品详情页视觉", image: "/works/zsea-01.jpg" },
-    { no: "02", brand: "Z:SEA", title: "控油祛痘洁面详情页视觉", image: "/works/zsea-02.jpg" },
-    { no: "03", brand: "Z:SEA", title: "男士面霜详情页视觉", image: "/works/zsea-03.jpg?v=2" },
-    { no: "04", brand: "Z:SEA", title: "男士护肤礼盒详情页视觉", image: "/works/zsea-04.jpg" },
-    { no: "05", brand: "EHD", title: "品牌直播活动详情页视觉", image: "/works/ehd-01.jpg" },
-    { no: "06", brand: "EHD", title: "定型喷雾详情页视觉", image: "/works/ehd-02.jpg" },
-    { no: "07", brand: "EHD", title: "祛痘精华产品详情页视觉", image: "/works/ehd-03.jpg" },
-    { no: "08", brand: "SDX", title: "紧致抗纹产品详情页视觉", image: "/works/sdx-01.jpg" },
+    { no: "01", brand: "猫小岛", title: "仓鼠浴沙产品视觉", image: "/works/pet-hamster-bath.webp" },
+    { no: "02", brand: "造砂工坊", title: "木薯猫砂产品视觉", image: "/works/pet-cassava-litter.webp" },
+    { no: "03", brand: "力狼", title: "全价鲜蒸猫粮产品视觉", image: "/works/pet-steamed-cat-food.webp" },
+    { no: "04", brand: "猫小岛", title: "全价犬粮产品视觉", image: "/works/pet-dog-food.webp" },
+    { no: "05", brand: "Z:SEA", title: "多效修护产品详情页视觉", image: "/works/zsea-01.jpg" },
+    { no: "06", brand: "Z:SEA", title: "控油祛痘洁面详情页视觉", image: "/works/zsea-02.jpg" },
+    { no: "07", brand: "Z:SEA", title: "男士面霜详情页视觉", image: "/works/zsea-03.jpg?v=2" },
+    { no: "08", brand: "Z:SEA", title: "男士护肤礼盒详情页视觉", image: "/works/zsea-04.jpg" },
+    { no: "09", brand: "EHD", title: "品牌直播活动详情页视觉", image: "/works/ehd-01.jpg" },
+    { no: "10", brand: "EHD", title: "定型喷雾详情页视觉", image: "/works/ehd-02.jpg" },
+    { no: "11", brand: "EHD", title: "祛痘精华产品详情页视觉", image: "/works/ehd-03.jpg" },
+    { no: "12", brand: "SDX", title: "紧致抗纹产品详情页视觉", image: "/works/sdx-01.jpg" },
   ];
   const detailColumns = [
     {
@@ -296,7 +300,7 @@ export default function Home() {
             <div className="work-gallery">
               {workGallery.map((project) => (
                 <article
-                  className={`work-tile ${project.no === "06" ? "work-tile-focus-top" : ""}`}
+                  className={`work-tile ${project.image.includes("ehd-02") ? "work-tile-focus-top" : ""}`}
                   key={project.no}
                   id={project.no === "01" ? "commercial" : undefined}
                 >
