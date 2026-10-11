@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import HeroFluidGlass from "./components/HeroFluidGlass";
 
 export const metadata: Metadata = {
@@ -76,6 +77,10 @@ export default function Home() {
     { no: "11", brand: "EHD", title: "祛痘精华产品详情页视觉", image: "/works/ehd-03.jpg" },
     { no: "12", brand: "SDX", title: "紧致抗纹产品详情页视觉", image: "/works/sdx-01.jpg" },
   ];
+  const containedWorkImages = new Set([
+    "/works/zsea-ocean-care.webp",
+    "/works/zsea-acne-cleanser.webp",
+  ]);
   const detailColumns = [
     {
       no: "01",
@@ -336,9 +341,12 @@ export default function Home() {
             <div className="work-gallery">
               {workGallery.map((project) => (
                 <article
-                  className={`work-tile ${project.image.includes("ehd-02") ? "work-tile-focus-top" : ""}`}
+                  className={`work-tile ${containedWorkImages.has(project.image) ? "work-tile-contain" : ""} ${project.image.includes("ehd-02") ? "work-tile-focus-top" : ""}`}
                   key={project.no}
                   id={project.no === "01" ? "commercial" : undefined}
+                  style={containedWorkImages.has(project.image)
+                    ? ({ "--work-tile-image": `url("${project.image}")` } as CSSProperties)
+                    : undefined}
                 >
                   <img src={project.image} alt={`${project.brand} ${project.title}`} />
                   <div className="work-tile-caption">
