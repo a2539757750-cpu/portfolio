@@ -79,12 +79,24 @@ export default function Home() {
   const detailColumns = [
     {
       no: "01",
+      title: "仓鼠花香浴沙",
+      en: "HAMSTER BATH SAND DETAIL PAGE",
+      images: Array.from({ length: 8 }, (_, index) => `/detail-pages/pet-bath-${String(index + 1).padStart(2, "0")}.webp`),
+    },
+    {
+      no: "02",
+      title: "木薯植物猫砂",
+      en: "CASSAVA CAT LITTER DETAIL PAGE",
+      images: Array.from({ length: 8 }, (_, index) => `/detail-pages/pet-litter-${String(index + 1).padStart(2, "0")}.webp`),
+    },
+    {
+      no: "03",
       title: "多效修护系列",
       en: "SKINCARE DETAIL PAGE",
       images: Array.from({ length: 8 }, (_, index) => `/detail-pages/skin-${String(index + 1).padStart(2, "0")}.webp`),
     },
     {
-      no: "02",
+      no: "04",
       title: "男士造型系列",
       en: "MEN'S HAIR DETAIL PAGE",
       images: Array.from({ length: 8 }, (_, index) => `/detail-pages/hair-${String(index + 1).padStart(2, "0")}.webp`),
