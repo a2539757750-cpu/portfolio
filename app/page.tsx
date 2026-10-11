@@ -174,9 +174,11 @@ export default function Home() {
     }),
   );
   const kvLeadOrder = ["01", "14", "17", "22"];
+  const kvPreludeOrder = ["02", "03"];
   const orderedOriginalKvVisuals = [
+    ...kvPreludeOrder.map((no) => kvVisuals[Number(no) - 1]),
     ...kvLeadOrder.map((no) => kvVisuals[Number(no) - 1]),
-    ...kvVisuals.filter((visual) => !kvLeadOrder.includes(visual.no)),
+    ...kvVisuals.filter((visual) => ![...kvPreludeOrder, ...kvLeadOrder].includes(visual.no)),
   ];
   const orderedKvVisuals = [
     ...newKvVisuals,
@@ -498,7 +500,7 @@ export default function Home() {
 
           <div className="kv-gallery" aria-label="主 KV 视觉作品展示">
             {orderedKvVisuals.map((visual) => (
-              <article className="kv-card" key={visual.no}>
+              <article className={`kv-card ${visual.sourceNo && kvLeadOrder.includes(visual.sourceNo) ? "kv-card-contain" : ""}`} key={visual.no}>
                 <figure>
                   <img className="kv-card-backdrop" src={visual.image} alt="" aria-hidden="true" loading="lazy" />
                   <img

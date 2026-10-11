@@ -274,6 +274,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .kv-card-art { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; object-position: center top; transition: transform .45s ease, opacity .45s ease; }
 .kv-card:nth-child(n+5) .kv-card-backdrop { display: none; }
 .kv-card:nth-child(n+5) .kv-card-art { object-fit: cover; object-position: center top; }
+.kv-card.kv-card-contain .kv-card-backdrop { display: block; }
+.kv-card.kv-card-contain .kv-card-art { object-fit: contain; object-position: center top; }
 .kv-card:nth-child(n+5) .kv-card-art-lift { height: calc(100% + 20px); transform: translateY(-20px); }
 .kv-card:nth-child(n+5) .kv-card-art-lift-60 { height: calc(100% + 60px); transform: translateY(-60px); }
 .kv-card:hover .kv-card-art { transform: scale(1.012); opacity: .96; }
