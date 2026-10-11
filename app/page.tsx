@@ -157,11 +157,11 @@ export default function Home() {
     ),
   }));
   const pageTwoFlowProjects = [...pageTwoProjects].sort((a, b) => a.flowOrder - b.flowOrder);
-  const newKvVisuals = Array.from(
-    { length: 18 },
-    (_, index) => ({
+  const newKvOrder = [6, 13, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18];
+  const newKvVisuals = newKvOrder.map(
+    (sourceIndex, index) => ({
       no: String(index + 1).padStart(2, "0"),
-      image: `/kv-visuals/pet-kv-${String(index + 1).padStart(2, "0")}.webp`,
+      image: `/kv-visuals/pet-kv-${String(sourceIndex).padStart(2, "0")}.webp`,
       sourceNo: null,
     }),
   );
