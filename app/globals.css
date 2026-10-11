@@ -340,7 +340,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .adoption-system .endorser-kicker span,
 .adoption-system .endorser-system-head span { color: #aa4b22; }
 .adoption-system .endorser-heading h2 { max-width: 940px; white-space: normal; }
-.adoption-system .endorser-overview { background: #e9e3d7; }
+.adoption-system .endorser-overview { grid-template-columns: minmax(380px, .9fr) minmax(360px, .62fr); background: #e9e3d7; }
 .adoption-system .endorser-overview-art { display: grid; place-items: center; background: #eee5d5; }
 .adoption-system .endorser-overview-art img { height: auto; object-fit: contain; }
 .adoption-material-head { margin-top: 0; }
@@ -356,7 +356,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .adoption-board-sheet img { background: #4b4c49; }
 .adoption-flag { display: grid; grid-template-rows: minmax(0, 1fr) auto; }
 .adoption-flag img { height: clamp(820px, 63vw, 1180px); object-fit: contain; background: #eee5d5; }
-.adoption-wide-stack { min-width: 0; display: grid; grid-template-rows: auto minmax(260px, 1fr) auto; gap: clamp(16px, 1.8vw, 30px); }
+.adoption-wide-stack { min-width: 0; display: grid; grid-template-rows: minmax(260px, 1fr) auto; gap: clamp(16px, 1.8vw, 30px); }
 .adoption-wide-stack figure { display: grid; grid-template-rows: auto 58px; }
 .adoption-wide-stack figure img { aspect-ratio: 16 / 9; object-fit: contain; background: #eee5d5; }
 .adoption-wide-stack .adoption-banner img { aspect-ratio: auto; }
@@ -498,6 +498,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .endorser-heading { grid-template-columns: 1fr; }
   .endorser-intro { max-width: 620px; }
   .endorser-overview { grid-template-columns: 1fr; }
+  .adoption-system .endorser-overview { grid-template-columns: 1fr; }
   .endorser-summary { min-height: 520px; }
   .endorser-overview-art { border-left: 0; border-top: 1px solid #aeb1aa; }
   .endorser-system-head { grid-template-columns: 1fr; gap: 22px; }

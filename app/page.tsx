@@ -554,23 +554,31 @@ export default function Home() {
               <p>以温暖但不过度煽情的方式降低公益议题的距离感，让领养信息、品牌联合与现场体验在同一套视觉语言中自然发生。</p>
             </div>
             <figure className="endorser-overview-art">
-              <img src="/adoption-event/hero.webp" alt="理享喵生宠物领养活动猫咪主题插画" loading="lazy" />
+              <img src="/adoption-event/main-kv.webp" alt="西湖银泰百货理享喵生宠物领养活动主视觉" loading="lazy" />
             </figure>
           </div>
 
           <div className="endorser-system-head">
-            <div><span>02</span><p>BRAND COMMUNICATION<br />品牌传播</p></div>
-            <p>用东方生活感的猫咪插画、手写标题与暖米色纸张质感，将“理想生活”转译为更亲切的“理享喵生”，同时保留联合品牌的清晰露出。</p>
+            <div><span>02</span><p>CHECK-IN EXPERIENCE<br />活动打卡区</p></div>
+            <p>四幅横向画面共同组成打卡区内容：从活动主题、养猫生活场景到公益游戏提示，让现场既适合停留拍照，也能自然传达领养理念。</p>
           </div>
 
           <div className="endorser-guides">
             <figure>
               <img src="/adoption-event/identity.webp" alt="理享喵生活动主题与联合品牌标识" loading="lazy" />
-              <figcaption><span>01</span><p>活动命名 / 联名识别 / 传播口号</p><i /></figcaption>
+              <figcaption><span>01</span><p>活动主题 / 联名识别</p><i /></figcaption>
+            </figure>
+            <figure>
+              <img src="/adoption-event/hero.webp" alt="理享喵生活动打卡区猫砂场景插画" loading="lazy" />
+              <figcaption><span>02</span><p>理想养猫生活 / 场景插画</p><i /></figcaption>
+            </figure>
+            <figure>
+              <img src="/adoption-event/play-zone.webp" alt="宠物领养活动游戏打卡区视觉" loading="lazy" />
+              <figcaption><span>03</span><p>游戏打卡区 / 公益互动</p><i /></figcaption>
             </figure>
             <figure>
               <img src="/adoption-event/illustration.webp" alt="理享喵生东方生活感猫咪插画" loading="lazy" />
-              <figcaption><span>02</span><p>猫咪角色 / 东方意境 / 温暖生活感</p><i /></figcaption>
+              <figcaption><span>04</span><p>开始和猫住 / 生活方式表达</p><i /></figcaption>
             </figure>
           </div>
 
@@ -593,10 +601,6 @@ export default function Home() {
               <figcaption><span>03</span><p>和猫住，共赴理享</p></figcaption>
             </figure>
             <div className="adoption-wide-stack">
-              <figure>
-                <img src="/adoption-event/play-zone.webp" alt="宠物领养活动游戏打卡区视觉" loading="lazy" />
-                <figcaption><span>04</span><p>游戏打卡区 / 公益互动</p></figcaption>
-              </figure>
               <div className="adoption-material-note">
                 <span>COMMUNICATION IDEA</span>
                 <h3>从“看见”流浪，<br />走向“开始和猫住”。</h3>
@@ -604,7 +608,7 @@ export default function Home() {
               </div>
               <figure className="adoption-banner">
                 <img src="/adoption-event/banner.webp" alt="理享喵生线下活动横条幅" loading="lazy" />
-                <figcaption><span>05</span><p>商场横幅 / 远距离识别</p></figcaption>
+                <figcaption><span>04</span><p>商场横幅 / 远距离识别</p></figcaption>
               </figure>
             </div>
           </div>
