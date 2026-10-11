@@ -27,7 +27,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero { min-height: 100svh; position: relative; overflow: hidden; display: flex; flex-direction: column; background: #030403; isolation: isolate; }
 .hero-motion { position: absolute; inset: -5%; z-index: -3; overflow: hidden; background: #030403; }
-.hero-image { position: absolute; inset: 0; background: url('/hero-art.png') center 48% / cover no-repeat; filter: grayscale(1) contrast(1.15) brightness(.72); opacity: .86; animation: heroDrift 16s ease-in-out infinite alternate; }
+.hero-image { position: absolute; inset: 0; background: url('/portfolio/hero-art.png') center 48% / cover no-repeat; filter: grayscale(1) contrast(1.15) brightness(.72); opacity: .86; animation: heroDrift 16s ease-in-out infinite alternate; }
 .hero-ghost { position: absolute; width: 55vw; height: 55vw; border: 1px solid rgba(217,255,67,.25); border-radius: 45% 55% 50% 50%; filter: blur(1px); mix-blend-mode: screen; }
 .hero-ghost-one { left: 25%; top: -23%; animation: rotate 21s linear infinite; }
 .hero-ghost-two { right: -18%; bottom: -37%; transform: scale(.65); animation: rotateReverse 27s linear infinite; }

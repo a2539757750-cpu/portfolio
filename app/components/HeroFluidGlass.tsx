@@ -6,12 +6,14 @@ import { Canvas, createPortal, useFrame, useThree } from "@react-three/fiber";
 import { Image, MeshTransmissionMaterial, Preload, useFBO, useGLTF } from "@react-three/drei";
 import { easing } from "maath";
 
+const basePath = "/portfolio";
+
 function HeroTexture() {
   const viewport = useThree((state) => state.viewport);
 
   return (
     <Image
-      url="/hero-art.png"
+      url={`${basePath}/hero-art.png`}
       scale={[viewport.width * 1.08, viewport.height * 1.08]}
       position={[0, 0, 0]}
       transparent
@@ -25,7 +27,7 @@ function FluidLens() {
   const lens = useRef<THREE.Mesh>(null);
   const cursor = useRef(new THREE.Vector2(0.08, 0.02));
   const buffer = useFBO({ samples: 4 });
-  const { nodes } = useGLTF("/assets/3d/lens.glb") as unknown as {
+  const { nodes } = useGLTF(`${basePath}/assets/3d/lens.glb`) as unknown as {
     nodes: Record<string, THREE.Mesh>;
   };
   const { gl, camera, viewport } = useThree();
@@ -115,4 +117,4 @@ export default function HeroFluidGlass() {
   );
 }
 
-useGLTF.preload("/assets/3d/lens.glb");
+useGLTF.preload(`${basePath}/assets/3d/lens.glb`);

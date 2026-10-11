@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import HeroFluidGlass from "./components/HeroFluidGlass";
 
+const basePath = "/portfolio";
+const assetPath = (path: string) => `${basePath}${path}`;
+
 export const metadata: Metadata = {
   title: "王明光 — Visual & AI Designer",
   description:
@@ -64,47 +67,47 @@ const strengths = [
 
 export default function Home() {
   const workGallery = [
-    { no: "01", brand: "猫小岛", title: "仓鼠浴沙产品视觉", image: "/works/pet-hamster-bath.webp" },
-    { no: "02", brand: "造砂工坊", title: "木薯猫砂产品视觉", image: "/works/pet-cassava-litter.webp" },
-    { no: "03", brand: "力狼", title: "全价鲜蒸猫粮产品视觉", image: "/works/pet-steamed-cat-food.webp" },
-    { no: "04", brand: "猫小岛", title: "全价犬粮产品视觉", image: "/works/pet-dog-food.webp" },
-    { no: "05", brand: "Z:SEA", title: "海洋男士护理产品视觉", image: "/works/zsea-ocean-care.webp" },
-    { no: "06", brand: "Z:SEA", title: "控油祛痘洁面详情页视觉", image: "/works/zsea-02.jpg" },
-    { no: "07", brand: "Z:SEA", title: "男士面霜详情页视觉", image: "/works/zsea-03.jpg?v=2" },
-    { no: "08", brand: "Z:SEA", title: "男士护肤礼盒详情页视觉", image: "/works/zsea-04.jpg" },
-    { no: "09", brand: "Z:SEA", title: "控油祛痘洁面产品视觉", image: "/works/zsea-acne-cleanser.webp" },
-    { no: "10", brand: "EHD", title: "定型喷雾详情页视觉", image: "/works/ehd-02.jpg" },
-    { no: "11", brand: "EHD", title: "祛痘精华产品详情页视觉", image: "/works/ehd-03.jpg" },
-    { no: "12", brand: "SDX", title: "紧致抗纹产品详情页视觉", image: "/works/sdx-01.jpg" },
+    { no: "01", brand: "猫小岛", title: "仓鼠浴沙产品视觉", image: assetPath("/works/pet-hamster-bath.webp") },
+    { no: "02", brand: "造砂工坊", title: "木薯猫砂产品视觉", image: assetPath("/works/pet-cassava-litter.webp") },
+    { no: "03", brand: "力狼", title: "全价鲜蒸猫粮产品视觉", image: assetPath("/works/pet-steamed-cat-food.webp") },
+    { no: "04", brand: "猫小岛", title: "全价犬粮产品视觉", image: assetPath("/works/pet-dog-food.webp") },
+    { no: "05", brand: "Z:SEA", title: "海洋男士护理产品视觉", image: assetPath("/works/zsea-ocean-care.webp") },
+    { no: "06", brand: "Z:SEA", title: "控油祛痘洁面详情页视觉", image: assetPath("/works/zsea-02.jpg") },
+    { no: "07", brand: "Z:SEA", title: "男士面霜详情页视觉", image: assetPath("/works/zsea-03.jpg?v=2") },
+    { no: "08", brand: "Z:SEA", title: "男士护肤礼盒详情页视觉", image: assetPath("/works/zsea-04.jpg") },
+    { no: "09", brand: "Z:SEA", title: "控油祛痘洁面产品视觉", image: assetPath("/works/zsea-acne-cleanser.webp") },
+    { no: "10", brand: "EHD", title: "定型喷雾详情页视觉", image: assetPath("/works/ehd-02.jpg") },
+    { no: "11", brand: "EHD", title: "祛痘精华产品详情页视觉", image: assetPath("/works/ehd-03.jpg") },
+    { no: "12", brand: "SDX", title: "紧致抗纹产品详情页视觉", image: assetPath("/works/sdx-01.jpg") },
   ];
   const containedWorkImages = new Set([
-    "/works/zsea-ocean-care.webp",
-    "/works/zsea-acne-cleanser.webp",
+    assetPath("/works/zsea-ocean-care.webp"),
+    assetPath("/works/zsea-acne-cleanser.webp"),
   ]);
   const detailColumns = [
     {
       no: "01",
       title: "仓鼠花香浴沙",
       en: "HAMSTER BATH SAND DETAIL PAGE",
-      images: Array.from({ length: 8 }, (_, index) => `/detail-pages/pet-bath-${String(index + 1).padStart(2, "0")}.webp`),
+      images: Array.from({ length: 8 }, (_, index) => assetPath(`/detail-pages/pet-bath-${String(index + 1).padStart(2, "0")}.webp`)),
     },
     {
       no: "02",
       title: "木薯植物猫砂",
       en: "CASSAVA CAT LITTER DETAIL PAGE",
-      images: Array.from({ length: 8 }, (_, index) => `/detail-pages/pet-litter-${String(index + 1).padStart(2, "0")}.webp`),
+      images: Array.from({ length: 8 }, (_, index) => assetPath(`/detail-pages/pet-litter-${String(index + 1).padStart(2, "0")}.webp`)),
     },
     {
       no: "03",
       title: "多效修护系列",
       en: "SKINCARE DETAIL PAGE",
-      images: Array.from({ length: 8 }, (_, index) => `/detail-pages/skin-${String(index + 1).padStart(2, "0")}.webp`),
+      images: Array.from({ length: 8 }, (_, index) => assetPath(`/detail-pages/skin-${String(index + 1).padStart(2, "0")}.webp`)),
     },
     {
       no: "04",
       title: "男士造型系列",
       en: "MEN'S HAIR DETAIL PAGE",
-      images: Array.from({ length: 8 }, (_, index) => `/detail-pages/hair-${String(index + 1).padStart(2, "0")}.webp`),
+      images: Array.from({ length: 8 }, (_, index) => assetPath(`/detail-pages/hair-${String(index + 1).padStart(2, "0")}.webp`)),
     },
   ];
   const pageTwoProjects = [
@@ -154,11 +157,11 @@ export default function Home() {
     },
   ].map((project) => ({
     ...project,
-    cover: `/detail-pages-2-newcover/${project.slug}-cover.webp`,
-    flowCover: `/detail-pages-2/${project.slug}-cover.webp`,
+    cover: assetPath(`/detail-pages-2-newcover/${project.slug}-cover.webp`),
+    flowCover: assetPath(`/detail-pages-2/${project.slug}-cover.webp`),
     images: Array.from(
       { length: 6 },
-      (_, index) => `/detail-pages-2/${project.slug}-${String(index + 1).padStart(2, "0")}.webp`,
+      (_, index) => assetPath(`/detail-pages-2/${project.slug}-${String(index + 1).padStart(2, "0")}.webp`),
     ),
   }));
   const pageTwoFlowProjects = [...pageTwoProjects].sort((a, b) => a.flowOrder - b.flowOrder);
@@ -166,7 +169,7 @@ export default function Home() {
   const newKvVisuals = newKvOrder.map(
     (sourceIndex, index) => ({
       no: String(index + 1).padStart(2, "0"),
-      image: `/kv-visuals/pet-kv-${String(sourceIndex).padStart(2, "0")}.webp`,
+      image: assetPath(`/kv-visuals/pet-kv-${String(sourceIndex).padStart(2, "0")}.webp`),
       sourceNo: null,
     }),
   );
@@ -174,7 +177,7 @@ export default function Home() {
     { length: 22 },
     (_, index) => ({
       no: String(index + 1).padStart(2, "0"),
-      image: `/kv-visuals/kv-${String(index + 1).padStart(2, "0")}.webp`,
+      image: assetPath(`/kv-visuals/kv-${String(index + 1).padStart(2, "0")}.webp`),
       sourceNo: String(index + 1).padStart(2, "0"),
     }),
   );
@@ -282,7 +285,7 @@ export default function Home() {
         <div className="section-kicker"><span>01</span> PROFILE / EXPERIENCE</div>
         <div className="about-grid">
           <div className="portrait" aria-label="王明光的视觉化头像占位">
-            <img className="portrait-image" src="/portrait-guagua-light.png" alt="瓜的个人形象" />
+            <img className="portrait-image" src={assetPath("/portrait-guagua-light.png")} alt="瓜的个人形象" />
             <div className="portrait-meta">
               <span>BASED IN HANGZHOU</span>
               <span>06 YEARS EXPERIENCE</span>
@@ -312,11 +315,11 @@ export default function Home() {
         <div className="brand-logo-space" aria-label="品牌 Logo 展示预留区">
           <span className="brand-logo-label">服务过的品牌</span>
           <div className="brand-logo-grid">
-            <div className="brand-logo-card brand-sdx"><img src="/brands/marks/sdx.png" alt="SDX 拾度" /></div>
-            <div className="brand-logo-card brand-isdin"><img src="/brands/marks/isdin.png" alt="ISDIN 怡思丁" /></div>
-            <div className="brand-logo-card brand-zhou-liu-fu"><img src="/brands/marks/zhou-liu-fu.png" alt="周六福" /></div>
-            <div className="brand-logo-card brand-ehd"><img src="/brands/marks/ehd.png" alt="EHD" /></div>
-            <div className="brand-logo-card brand-zisea"><img src="/brands/marks/zisea.png" alt="ZISEA" /></div>
+            <div className="brand-logo-card brand-sdx"><img src={assetPath("/brands/marks/sdx.png")} alt="SDX 拾度" /></div>
+            <div className="brand-logo-card brand-isdin"><img src={assetPath("/brands/marks/isdin.png")} alt="ISDIN 怡思丁" /></div>
+            <div className="brand-logo-card brand-zhou-liu-fu"><img src={assetPath("/brands/marks/zhou-liu-fu.png")} alt="周六福" /></div>
+            <div className="brand-logo-card brand-ehd"><img src={assetPath("/brands/marks/ehd.png")} alt="EHD" /></div>
+            <div className="brand-logo-card brand-zisea"><img src={assetPath("/brands/marks/zisea.png")} alt="ZISEA" /></div>
           </div>
         </div>
         <div className="stats-wrap">
@@ -562,7 +565,7 @@ export default function Home() {
               <p>以温暖但不过度煽情的方式降低公益议题的距离感，让领养信息、品牌联合与现场体验在同一套视觉语言中自然发生。</p>
             </div>
             <figure className="endorser-overview-art">
-              <img src="/adoption-event/main-kv.webp" alt="西湖银泰百货理享喵生宠物领养活动主视觉" loading="lazy" />
+              <img src={assetPath("/adoption-event/main-kv.webp")} alt="西湖银泰百货理享喵生宠物领养活动主视觉" loading="lazy" />
             </figure>
           </div>
 
@@ -573,19 +576,19 @@ export default function Home() {
 
           <div className="endorser-guides">
             <figure>
-              <img src="/adoption-event/identity.webp" alt="理享喵生活动主题与联合品牌标识" loading="lazy" />
+              <img src={assetPath("/adoption-event/identity.webp")} alt="理享喵生活动主题与联合品牌标识" loading="lazy" />
               <figcaption><span>01</span><p>活动主题 / 联名识别</p><i /></figcaption>
             </figure>
             <figure>
-              <img src="/adoption-event/hero.webp" alt="理享喵生活动打卡区猫砂场景插画" loading="lazy" />
+              <img src={assetPath("/adoption-event/hero.webp")} alt="理享喵生活动打卡区猫砂场景插画" loading="lazy" />
               <figcaption><span>02</span><p>理想养猫生活 / 场景插画</p><i /></figcaption>
             </figure>
             <figure>
-              <img src="/adoption-event/play-zone.webp" alt="宠物领养活动游戏打卡区视觉" loading="lazy" />
+              <img src={assetPath("/adoption-event/play-zone.webp")} alt="宠物领养活动游戏打卡区视觉" loading="lazy" />
               <figcaption><span>03</span><p>游戏打卡区 / 公益互动</p><i /></figcaption>
             </figure>
             <figure>
-              <img src="/adoption-event/illustration.webp" alt="理享喵生东方生活感猫咪插画" loading="lazy" />
+              <img src={assetPath("/adoption-event/illustration.webp")} alt="理享喵生东方生活感猫咪插画" loading="lazy" />
               <figcaption><span>04</span><p>开始和猫住 / 生活方式表达</p><i /></figcaption>
             </figure>
           </div>
@@ -597,15 +600,15 @@ export default function Home() {
 
           <div className="adoption-materials">
             <figure className="adoption-board-sheet">
-              <img src="/adoption-event/boards.webp" alt="宠物领养活动八组主题展板设计" loading="lazy" />
+              <img src={assetPath("/adoption-event/boards.webp")} alt="宠物领养活动八组主题展板设计" loading="lazy" />
               <figcaption><span>01</span><p>主题展板 / 猫咪生活场景</p></figcaption>
             </figure>
             <figure className="adoption-flag">
-              <img src="/adoption-event/flag-love.webp" alt="让爱永不再流浪主题挂旗" loading="lazy" />
+              <img src={assetPath("/adoption-event/flag-love.webp")} alt="让爱永不再流浪主题挂旗" loading="lazy" />
               <figcaption><span>02</span><p>让爱永不再流浪</p></figcaption>
             </figure>
             <figure className="adoption-flag">
-              <img src="/adoption-event/flag-together.webp" alt="和猫住共赴理享主题挂旗" loading="lazy" />
+              <img src={assetPath("/adoption-event/flag-together.webp")} alt="和猫住共赴理享主题挂旗" loading="lazy" />
               <figcaption><span>03</span><p>和猫住，共赴理享</p></figcaption>
             </figure>
             <div className="adoption-wide-stack">
@@ -615,7 +618,7 @@ export default function Home() {
                 <p>传播不是单向倡议，而是用游戏、打卡与真实领养信息，让逛商场的人愿意停下来、了解并参与。</p>
               </div>
               <figure className="adoption-banner">
-                <img src="/adoption-event/banner.webp" alt="理享喵生线下活动横条幅" loading="lazy" />
+                <img src={assetPath("/adoption-event/banner.webp")} alt="理享喵生线下活动横条幅" loading="lazy" />
                 <figcaption><span>04</span><p>商场横幅 / 远距离识别</p></figcaption>
               </figure>
             </div>
@@ -629,7 +632,7 @@ export default function Home() {
               <div><b>CO-BRANDING</b><b>ADOPTION</b><b>PUBLIC WELFARE</b><b>OFFLINE</b></div>
             </div>
             <figure>
-              <img src="/adoption-event/onsite.webp" alt="西湖银泰百货宠物领养活动线下实拍" loading="lazy" />
+              <img src={assetPath("/adoption-event/onsite.webp")} alt="西湖银泰百货宠物领养活动线下实拍" loading="lazy" />
             </figure>
           </div>
 
@@ -648,7 +651,7 @@ export default function Home() {
           <div className="main-image-grid" aria-label="主图设计作品展示">
             {mainImages.map((item, index) => {
               const no = String(index + 1).padStart(2, "0");
-              const image = `/main-images/${item.file}`;
+              const image = assetPath(`/main-images/${item.file}`);
               return (
                 <article className="main-image-card" key={item.file}>
                   <figure>
@@ -680,7 +683,7 @@ export default function Home() {
           </div>
           <div className="personal-gallery-grid" aria-label="角色与概念创作">
             {personalCharacterWorks.map((item) => {
-              const image = `/personal-creation/${item.image}`;
+              const image = assetPath(`/personal-creation/${item.image}`);
               return (
                 <article className="personal-gallery-card" key={item.image}>
                   <figure>
@@ -698,7 +701,7 @@ export default function Home() {
           </div>
           <div className="personal-gallery-grid personal-product-gallery" aria-label="产品与材质练习">
             {personalProductWorks.map((item) => {
-              const image = `/personal-creation/${item.image}`;
+              const image = assetPath(`/personal-creation/${item.image}`);
               return (
                 <article className="personal-gallery-card personal-product-card" key={item.image}>
                   <figure>
