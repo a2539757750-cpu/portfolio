@@ -157,17 +157,33 @@ export default function Home() {
     ),
   }));
   const pageTwoFlowProjects = [...pageTwoProjects].sort((a, b) => a.flowOrder - b.flowOrder);
+  const newKvVisuals = Array.from(
+    { length: 18 },
+    (_, index) => ({
+      no: String(index + 1).padStart(2, "0"),
+      image: `/kv-visuals/pet-kv-${String(index + 1).padStart(2, "0")}.webp`,
+      sourceNo: null,
+    }),
+  );
   const kvVisuals = Array.from(
     { length: 22 },
     (_, index) => ({
       no: String(index + 1).padStart(2, "0"),
       image: `/kv-visuals/kv-${String(index + 1).padStart(2, "0")}.webp`,
+      sourceNo: String(index + 1).padStart(2, "0"),
     }),
   );
   const kvLeadOrder = ["01", "14", "17", "22"];
-  const orderedKvVisuals = [
+  const orderedOriginalKvVisuals = [
     ...kvLeadOrder.map((no) => kvVisuals[Number(no) - 1]),
     ...kvVisuals.filter((visual) => !kvLeadOrder.includes(visual.no)),
+  ];
+  const orderedKvVisuals = [
+    ...newKvVisuals,
+    ...orderedOriginalKvVisuals.map((visual, index) => ({
+      ...visual,
+      no: String(index + newKvVisuals.length + 1).padStart(2, "0"),
+    })),
   ];
   const mainImageGroups = [
     { title: "Z:SEA / EHD", en: "MEN'S CARE", files: ["main-01.jpg", "main-02.webp", "main-03.jpg", "main-04.webp"] },
@@ -486,7 +502,7 @@ export default function Home() {
                 <figure>
                   <img className="kv-card-backdrop" src={visual.image} alt="" aria-hidden="true" loading="lazy" />
                   <img
-                    className={`kv-card-art ${visual.no === "07" ? "kv-card-art-lift-60" : ["16", "21"].includes(visual.no) ? "kv-card-art-lift" : ""}`}
+                    className={`kv-card-art ${visual.sourceNo === "07" ? "kv-card-art-lift-60" : visual.sourceNo && ["16", "21"].includes(visual.sourceNo) ? "kv-card-art-lift" : ""}`}
                     src={visual.image}
                     alt={`主 KV 视觉作品 ${visual.no}`}
                     loading="lazy"
