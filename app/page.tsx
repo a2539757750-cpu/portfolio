@@ -261,7 +261,7 @@ export default function Home() {
             <a href="#commercial"><span>详情页设计</span><small>DETAIL PAGE<br />DESIGN</small></a>
             <a href="#keyvisual-gallery"><span>主 KV 设计</span><small>KEY VISUAL<br />DESIGN</small></a>
             <a href="#keyvisual"><span>主图设计</span><small>KEY VISUAL<br />DESIGN</small></a>
-            <a href="#endorser-system"><span>品牌代言人体系搭建</span><small>ENDORSER<br />VISUAL SYSTEM</small></a>
+            <a href="#adoption-event"><span>西湖银泰宠物领养活动</span><small>PET ADOPTION<br />CAMPAIGN</small></a>
             <a href="#personal"><span>个人创作</span><small>PERSONAL<br />CREATION</small></a>
           </nav>
 
@@ -527,66 +527,101 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="endorser-system section" id="endorser-system">
+      <section className="endorser-system adoption-system section" id="adoption-event">
         <div className="shell endorser-inner">
-          <div className="section-kicker endorser-kicker"><span>05</span> ENDORSER VISUAL SYSTEM / 代言人体系搭建</div>
+          <div className="section-kicker endorser-kicker"><span>05</span> PUBLIC WELFARE CAMPAIGN / 西湖银泰百货宠物领养活动</div>
 
           <div className="endorser-heading">
             <div>
-              <small>CASE STUDY / EHD × 双代言人</small>
-              <h2>为双代言人，<br />建立统一的<em>视觉表达。</em></h2>
+              <small>CASE STUDY / 城市理享 × 西湖银泰百货</small>
+              <h2>理享喵生，<br />让领养成为<em>城市日常。</em></h2>
             </div>
             <div className="endorser-intro">
-              <b>从官宣内容，延伸到长期品牌使用</b>
-              <p>EHD 首次启用双代言人，需要统一两位艺人的画面关系，以及人物、签名、品牌色和版式的使用方式。我负责梳理这套规则，并将其延展到电商、投放与线下场景。</p>
+              <b>从联合发起，到商场里的真实相遇</b>
+              <p>活动由城市理享、银泰百货杭州西湖店、和猫住与它基金共同发起。以“开始和猫住”为沟通核心，把宠物领养、责任养宠与公益互动带进商业空间，让品牌表达不止被看见，也能促成真实连接。</p>
             </div>
           </div>
 
           <div className="endorser-overview">
             <div className="endorser-summary">
               <span>01 / PROJECT OVERVIEW</span>
-              <h3>从高频场景出发，<br />把规则讲清楚。</h3>
+              <h3>少一点流浪，<br />多一点安心。</h3>
               <dl>
-                <div><dt>负责内容</dt><dd>视觉方向 / 规范制定 / 场景延展</dd></div>
-                <div><dt>项目重点</dt><dd>统一双人构图与品牌识别</dd></div>
-                <div><dt>应用场景</dt><dd>品牌官宣 / 电商 / 投放 / 线下</dd></div>
+                <div><dt>负责内容</dt><dd>活动主视觉 / 物料延展 / 线下呈现</dd></div>
+                <div><dt>传播主题</dt><dd>理享喵生 / 开始和猫住</dd></div>
+                <div><dt>应用场景</dt><dd>领养展示 / 公益互动 / 商场导视</dd></div>
               </dl>
-              <p>将常用构图与易产生偏差的细节整理成明确规范，为后续设计和跨团队协作提供统一依据。</p>
+              <p>以温暖但不过度煽情的方式降低公益议题的距离感，让领养信息、品牌联合与现场体验在同一套视觉语言中自然发生。</p>
             </div>
             <figure className="endorser-overview-art">
-              <img src="/endorser-system/overview.png" alt="EHD 双代言人视觉体系项目概览" loading="lazy" />
+              <img src="/adoption-event/hero.webp" alt="理享喵生宠物领养活动猫咪主题插画" loading="lazy" />
             </figure>
           </div>
 
           <div className="endorser-system-head">
-            <div><span>02</span><p>VISUAL GUIDELINES<br />视觉规范</p></div>
-            <p>围绕人物素材、签名、色彩与版式建立使用标准，减少不同渠道输出时的视觉偏差。</p>
+            <div><span>02</span><p>BRAND COMMUNICATION<br />品牌传播</p></div>
+            <p>用东方生活感的猫咪插画、手写标题与暖米色纸张质感，将“理想生活”转译为更亲切的“理享喵生”，同时保留联合品牌的清晰露出。</p>
           </div>
 
           <div className="endorser-guides">
             <figure>
-              <img src="/endorser-system/identity-rules.png" alt="代言人人物、签名与色彩使用规范" loading="lazy" />
-              <figcaption><span>01</span><p>人物形象 / 签名 / 色彩</p><i /></figcaption>
+              <img src="/adoption-event/identity.webp" alt="理享喵生活动主题与联合品牌标识" loading="lazy" />
+              <figcaption><span>01</span><p>活动命名 / 联名识别 / 传播口号</p><i /></figcaption>
             </figure>
             <figure>
-              <img src="/endorser-system/layout-rules.png" alt="代言人字体、周边与主图版式规范" loading="lazy" />
-              <figcaption><span>02</span><p>字体语言 / 周边物料 / 主图版式</p><i /></figcaption>
+              <img src="/adoption-event/illustration.webp" alt="理享喵生东方生活感猫咪插画" loading="lazy" />
+              <figcaption><span>02</span><p>猫咪角色 / 东方意境 / 温暖生活感</p><i /></figcaption>
             </figure>
           </div>
 
-          <div className="endorser-application">
+          <div className="endorser-system-head adoption-material-head">
+            <div><span>03</span><p>OFFLINE VISUAL SYSTEM<br />线下物料系统</p></div>
+            <p>将同一套主题延展至展板、挑空挂旗、横条幅与互动打卡区，让顾客从商场远端到活动现场都能连续识别活动信息。</p>
+          </div>
+
+          <div className="adoption-materials">
+            <figure className="adoption-board-sheet">
+              <img src="/adoption-event/boards.webp" alt="宠物领养活动八组主题展板设计" loading="lazy" />
+              <figcaption><span>01</span><p>主题展板 / 猫咪生活场景</p></figcaption>
+            </figure>
+            <figure className="adoption-flag">
+              <img src="/adoption-event/flag-love.webp" alt="让爱永不再流浪主题挂旗" loading="lazy" />
+              <figcaption><span>02</span><p>让爱永不再流浪</p></figcaption>
+            </figure>
+            <figure className="adoption-flag">
+              <img src="/adoption-event/flag-together.webp" alt="和猫住共赴理享主题挂旗" loading="lazy" />
+              <figcaption><span>03</span><p>和猫住，共赴理享</p></figcaption>
+            </figure>
+            <div className="adoption-wide-stack">
+              <figure>
+                <img src="/adoption-event/play-zone.webp" alt="宠物领养活动游戏打卡区视觉" loading="lazy" />
+                <figcaption><span>04</span><p>游戏打卡区 / 公益互动</p></figcaption>
+              </figure>
+              <div className="adoption-material-note">
+                <span>COMMUNICATION IDEA</span>
+                <h3>从“看见”流浪，<br />走向“开始和猫住”。</h3>
+                <p>传播不是单向倡议，而是用游戏、打卡与真实领养信息，让逛商场的人愿意停下来、了解并参与。</p>
+              </div>
+              <figure className="adoption-banner">
+                <img src="/adoption-event/banner.webp" alt="理享喵生线下活动横条幅" loading="lazy" />
+                <figcaption><span>05</span><p>商场横幅 / 远距离识别</p></figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div className="endorser-application adoption-application">
             <div className="endorser-application-copy">
-              <span>03 / APPLICATION</span>
-              <h3>用真实场景，<br />检验这套规范。</h3>
-              <p>体系最终应用于城市大屏、渠道海报、电商活动与产品传播。面对不同尺寸和信息量，仍能保持统一的人物关系与品牌识别。</p>
-              <div><b>BRAND</b><b>E-COMMERCE</b><b>MEDIA</b><b>OFFLINE</b></div>
+              <span>04 / LIVE IMPLEMENTATION</span>
+              <h3>让设计进入现场，<br />也让公益被真实看见。</h3>
+              <p>成套物料最终落地于西湖银泰百货。挑空挂旗建立远距离氛围，展板承接活动说明与领养信息，统一的米色、墨棕与亮黄色在复杂商业环境中保持温度与识别度。</p>
+              <div><b>CO-BRANDING</b><b>ADOPTION</b><b>PUBLIC WELFARE</b><b>OFFLINE</b></div>
             </div>
             <figure>
-              <img src="/endorser-system/applications.png" alt="EHD 双代言人体系落地应用场景" loading="lazy" />
+              <img src="/adoption-event/onsite.webp" alt="西湖银泰百货宠物领养活动线下实拍" loading="lazy" />
             </figure>
           </div>
 
-          <div className="endorser-footerline"><span>EHD / ENDORSER SYSTEM</span><i /><span>2025</span></div>
+          <div className="endorser-footerline"><span>理享喵生 / PET ADOPTION CAMPAIGN</span><i /><span>WEST LAKE INTIME</span></div>
         </div>
       </section>
 
