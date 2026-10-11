@@ -195,9 +195,15 @@ export default function Home() {
     { title: "头皮护理", en: "MEDICAL SCALP CARE", files: ["main-17.jpg", "main-18.jpg"] },
     { title: "怡思丁防晒", en: "ISDIN SUN CARE", files: ["main-19.jpg", "main-20.jpg", "main-21.jpg", "main-22.jpg", "main-23.jpg", "main-24.jpg"] },
   ];
-  const mainImages = mainImageGroups.flatMap((group) =>
+  const newMainImages = Array.from({ length: 16 }, (_, index) => ({
+    file: `pet-main-${String(index + 1).padStart(2, "0")}.webp`,
+    title: index < 5 ? "彩虹食谱" : index < 11 ? "鱼油猫粮" : index < 14 ? "转化视觉" : "宠物营养",
+    en: index < 5 ? "RAINBOW RECIPE" : index < 11 ? "FISH OIL CAT FOOD" : index < 14 ? "E-COMMERCE CONVERSION" : "PET NUTRITION",
+  }));
+  const originalMainImages = mainImageGroups.flatMap((group) =>
     group.files.map((file) => ({ file, title: group.title, en: group.en })),
   );
+  const mainImages = [...newMainImages, ...originalMainImages];
   const personalCharacterWorks = [
     { title: "夜游生物", image: "night-creatures.webp" },
     { title: "黄鼬运输机", image: "weasel-machine.webp" },
