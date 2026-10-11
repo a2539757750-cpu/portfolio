@@ -157,7 +157,7 @@ export default function Home() {
     ),
   }));
   const pageTwoFlowProjects = [...pageTwoProjects].sort((a, b) => a.flowOrder - b.flowOrder);
-  const newKvOrder = [6, 13, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18];
+  const newKvOrder = [6, 13, 3, 4, 1, 2, 5, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18];
   const newKvVisuals = newKvOrder.map(
     (sourceIndex, index) => ({
       no: String(index + 1).padStart(2, "0"),
