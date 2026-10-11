@@ -67,7 +67,7 @@ export default function Home() {
     { no: "02", brand: "造砂工坊", title: "木薯猫砂产品视觉", image: "/works/pet-cassava-litter.webp" },
     { no: "03", brand: "力狼", title: "全价鲜蒸猫粮产品视觉", image: "/works/pet-steamed-cat-food.webp" },
     { no: "04", brand: "猫小岛", title: "全价犬粮产品视觉", image: "/works/pet-dog-food.webp" },
-    { no: "05", brand: "Z:SEA", title: "多效修护产品详情页视觉", image: "/works/zsea-01.jpg" },
+    { no: "05", brand: "Z:SEA", title: "海洋男士护理产品视觉", image: "/works/zsea-ocean-care.webp" },
     { no: "06", brand: "Z:SEA", title: "控油祛痘洁面详情页视觉", image: "/works/zsea-02.jpg" },
     { no: "07", brand: "Z:SEA", title: "男士面霜详情页视觉", image: "/works/zsea-03.jpg?v=2" },
     { no: "08", brand: "Z:SEA", title: "男士护肤礼盒详情页视觉", image: "/works/zsea-04.jpg" },
