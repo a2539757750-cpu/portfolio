@@ -113,36 +113,45 @@ export default function Home() {
   const pageTwoProjects = [
     {
       no: "01",
-      title: "冰感高速吹风机",
-      en: "COOLING HAIR DRYER",
-      coverTitle: "冰感高速吹风机",
-      coverEn: "COOLING HAIR DRYER",
+      title: "鸡牛双拼全价犬粮",
+      en: "CHICKEN & BEEF DOG FOOD",
+      coverTitle: "鸡牛双拼全价犬粮",
+      coverEn: "CHICKEN & BEEF DOG FOOD",
       flowOrder: 3,
-      note: "以清透冷感与轻盈空气感，强化便携小家电的功能记忆。",
-      keywords: "COOLING / AIRFLOW / PORTABLE",
+      note: "以鲜肉食材、活力犬只与权威背书，建立高蛋白、均衡营养的狗粮产品认知。",
+      keywords: "DOG FOOD / NUTRITION / ENERGY",
       slug: "fan",
+      coverFile: "fan-cover-new.png",
+      detailKey: "dog-food",
+      detailCount: 6,
     },
     {
       no: "02",
-      title: "超声波洁牙器",
-      en: "ORAL CARE DEVICE",
-      coverTitle: "超声波洁牙器",
-      coverEn: "ORAL CARE DEVICE",
+      title: "木薯玫瑰植物猫砂",
+      en: "ROSE CASSAVA CAT LITTER",
+      coverTitle: "木薯玫瑰植物猫砂",
+      coverEn: "ROSE CASSAVA CAT LITTER",
       flowOrder: 1,
-      note: "用克制的科技秩序组织功能信息，建立专业、可信的护理体验。",
-      keywords: "TECHNOLOGY / CLEANING / TRUST",
+      note: "以东方花卉、木质与柔粉色调，传达玫瑰香气和植物木薯猫砂的清新质感。",
+      keywords: "CAT LITTER / ROSE / CASSAVA",
       slug: "device",
+      coverFile: "device-cover-latest.png",
+      detailKey: "cat-litter",
+      detailCount: 6,
     },
     {
       no: "03",
-      title: "智能揉腹仪",
-      en: "ABDOMINAL MASSAGER",
-      coverTitle: "智能揉腹仪",
-      coverEn: "ABDOMINAL MASSAGER",
+      title: "长肉食谱全价猫粮",
+      en: "NUTRIMAX CAT FOOD",
+      coverTitle: "长肉食谱全价猫粮",
+      coverEn: "NUTRIMAX CAT FOOD",
       flowOrder: 2,
-      note: "通过温暖留白与柔和场景，平衡产品功能与身体护理感受。",
-      keywords: "COMFORT / CARE / WARMTH",
+      note: "以家庭陪伴场景与营养食谱信息，呈现长肉食谱猫粮的适口性与肠胃呵护。",
+      keywords: "CAT FOOD / NUTRIMAX / GUT CARE",
       slug: "maternal",
+      coverFile: "maternal-cover-latest.png",
+      detailKey: "cat-food",
+      detailCount: 6,
     },
     {
       no: "04",
@@ -154,10 +163,19 @@ export default function Home() {
       note: "以高饱和阳光色彩聚焦户外防护，让核心卖点快速被记住。",
       keywords: "SUN CARE / OUTDOOR / PROTECTION",
       slug: "isdin",
+      coverFile: "isdin-cover.webp",
+      detailKey: null,
+      detailCount: 0,
     },
   ].map((project) => ({
     ...project,
-    cover: assetPath(`/detail-pages-2-newcover/${project.slug}-cover.webp`),
+    cover: assetPath(`/detail-pages-2-newcover/${project.coverFile}`),
+    detailImages: project.detailKey
+      ? Array.from(
+          { length: project.detailCount },
+          (_, index) => assetPath(`/detail-pages-2-latest/split/${project.detailKey}-${String(index + 1).padStart(2, "0")}.webp`),
+        )
+      : null,
     flowCover: assetPath(`/detail-pages-2/${project.slug}-cover.webp`),
     images: Array.from(
       { length: 6 },
@@ -295,8 +313,8 @@ export default function Home() {
           <div className="about-copy">
             <h2 className="intro-lead"><span>个人简介</span><span>工作经历</span></h2>
             <div className="intro-text">
-              <p>做了 6 年视觉设计，主要专注电商视觉、品牌内容和三维产品表现。比起单纯把画面“做得好看”，我更关注设计怎么解决实际的商业问题。</p>
-              <p>服务过海洋至尊、EHD、SDX、周六福、怡思丁等品牌，接触过美妆、医疗器械、男士洗护、黄金珠宝等不同品类。目前也在持续把 AI 融入自己的创意和设计工作流，希望让想法更快、更好地落地。</p>
+              <p>做了 6 年视觉设计，主要专注电商视觉、品牌内容和三维产品表现。比起单纯把画面“做得好看”，我更关注设计怎么解决实际的商业问题。未来希望继续深耕快消品领域，尤其聚焦宠物行业，用设计积累长期的品牌价值，做出真正有影响力的作品。</p>
+              <p>服务过海洋至尊、EHD、SDX、周六福、怡思丁、力狼、奥丁 NEO、造砂工坊等品牌，接触过宠物食品与用品、美妆、医疗器械、男士洗护、黄金珠宝等不同品类。目前也在持续把 AI 融入自己的创意和设计工作流，希望让想法更快、更好地落地。</p>
             </div>
             <div className="compact-experience" aria-label="工作经历">
               <span className="compact-experience-label">WORK EXPERIENCE</span>
@@ -445,12 +463,12 @@ export default function Home() {
           <div className="section-kicker"><span>03</span> DETAIL PAGE VISUAL / PAGE 2</div>
           <div className="section-heading page-two-heading">
             <h2>详情页视觉<br /><em>PAGE 2</em></h2>
-            <p>围绕个护、母婴与防晒品类，以首屏快速建立产品记忆，再通过连续的信息节奏完成卖点说明与视觉转化。</p>
+            <p>围绕猫粮、猫砂、狗粮与防晒品类，以场景化首屏快速建立产品记忆，并通过清晰的信息层级呈现核心卖点与品牌视觉。</p>
           </div>
 
           <div className="page-two-covers" aria-label="四组详情页首屏设计">
             {pageTwoProjects.map((project) => (
-              <article className="page-two-cover" key={project.slug}>
+              <article className={`page-two-cover page-two-cover-${project.slug}`} key={project.slug}>
                 <div className="page-two-cover-image">
                   <img src={project.cover} alt={`${project.coverTitle}详情页首屏`} />
                 </div>
@@ -473,23 +491,43 @@ export default function Home() {
                   <span>{String(projectIndex + 1).padStart(2, "0")}</span>
                   <div><b>{project.title}</b><small>{project.en}</small></div>
                 </header>
-                <div className="page-two-track-grid">
-                  {[[project.flowCover, ...project.images.slice(0, 3)], project.images.slice(3)].map((track, trackIndex) => (
-                    <div className="page-two-track" key={`${project.slug}-track-${trackIndex + 1}`}>
-                      {track.map((image, index) => (
-                        <figure key={image}>
-                          <img
-                            src={image}
-                            alt={trackIndex === 0 && index === 0
-                              ? `${project.title}完整首屏展示`
-                              : `${project.title}详情页连续内容`}
-                            loading="lazy"
-                          />
-                        </figure>
-                      ))}
-                    </div>
-                  ))}
-                </div>
+                {project.detailImages ? (
+                  <div className="page-two-track-grid">
+                    {[project.detailImages.slice(0, 3), project.detailImages.slice(3)].map((track, trackIndex) => (
+                      <div className="page-two-track" key={`${project.slug}-latest-track-${trackIndex + 1}`}>
+                        {track.map((image, index) => (
+                          <figure key={image}>
+                            <img
+                              src={image}
+                              alt={trackIndex === 0 && index === 0
+                                ? `${project.title}完整首屏展示`
+                                : `${project.title}详情页连续内容`}
+                              loading="lazy"
+                            />
+                          </figure>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="page-two-track-grid">
+                    {[[project.flowCover, ...project.images.slice(0, 3)], project.images.slice(3)].map((track, trackIndex) => (
+                      <div className="page-two-track" key={`${project.slug}-track-${trackIndex + 1}`}>
+                        {track.map((image, index) => (
+                          <figure key={image}>
+                            <img
+                              src={image}
+                              alt={trackIndex === 0 && index === 0
+                                ? `${project.title}完整首屏展示`
+                                : `${project.title}详情页连续内容`}
+                              loading="lazy"
+                            />
+                          </figure>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
                 <div className="page-two-filler" aria-label={`${project.title}视觉关键词`}>
                   <div className="page-two-filler-copy">
                     <span>{String(projectIndex + 1).padStart(2, "0")} / VISUAL SYSTEM</span>

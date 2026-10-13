@@ -235,6 +235,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .page-two-cover { min-width: 0; position: relative; border: 0; background: #171916; overflow: hidden; }
 .page-two-cover-image { aspect-ratio: .505; overflow: hidden; background: #d9dad4; line-height: 0; }
 .page-two-cover-image img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; }
+.page-two-cover-device .page-two-cover-image img,
+.page-two-cover-maternal .page-two-cover-image img { object-position: center top; }
 .page-two-cover-meta { min-height: 102px; position: absolute; z-index: 1; inset: auto 0 0; padding: 36px 20px 18px; color: #fff; background: linear-gradient(transparent, rgba(5,6,5,.88)); }
 .page-two-cover-meta span, .page-two-flow-head span, .page-two-column header span, .page-two-column header small { color: #777b73; font: 600 9px ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .14em; }
 .page-two-cover-meta span { color: var(--acid); }
