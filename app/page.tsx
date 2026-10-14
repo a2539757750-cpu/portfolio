@@ -318,7 +318,7 @@ export default function Home() {
             </div>
             <div className="compact-experience" aria-label="工作经历">
               <span className="compact-experience-label">WORK EXPERIENCE</span>
-              <div><time>2025.12 — 2026.08</time><strong>资深电商设计</strong><p>仟竟科技（大健康药妆）</p></div>
+              <div><time>2025.12 — 至今</time><strong>资深电商设计</strong><p>杭州有熊（宠物食品与用品）</p></div>
               <div><time>2025.03 — 2025.12</time><strong>品牌视觉设计</strong><p>梦尔达科技（美妆个护）</p></div>
               <div><time>2023.11 — 2024.12</time><strong>天猫主设</strong><p>怡思丁防晒（西班牙防晒品牌）</p></div>
               <div><time>2021.05 — 2023.10</time><strong>天猫主设</strong><p>周六福电子商务（珠宝品牌）</p></div>
