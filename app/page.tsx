@@ -183,6 +183,50 @@ export default function Home() {
     ),
   }));
   const pageTwoFlowProjects = [...pageTwoProjects].sort((a, b) => a.flowOrder - b.flowOrder);
+  const pageThreeProjects = [
+    {
+      no: "01",
+      title: "城市理享纯净鱼油猫条",
+      en: "FISH OIL CAT TREATS",
+      image: assetPath("/detail-pages-3/fish-oil-cat-treat.jpg"),
+      detailKey: "fish-oil-cat-treat",
+      note: "以鱼油营养、纯净配方和适口体验为核心，建立猫咪功能零食的专业产品认知。",
+      keywords: "CAT TREATS / FISH OIL / NUTRITION",
+    },
+    {
+      no: "02",
+      title: "长肉营养食谱全价犬粮",
+      en: "NUTRIMAX DOG FOOD",
+      image: assetPath("/detail-pages-3/nutrimax-dog-food.png"),
+      detailKey: "nutrimax-dog-food",
+      note: "围绕肠胃养护与科学长肉，将食谱配方、原料营养和品质保障组织为清晰的阅读路径。",
+      keywords: "DOG FOOD / GUT CARE / NUTRIMAX",
+    },
+    {
+      no: "03",
+      title: "樱花白茶木薯猫砂",
+      en: "SAKURA CASSAVA CAT LITTER",
+      image: assetPath("/detail-pages-3/sakura-cat-litter.png"),
+      detailKey: "sakura-cat-litter",
+      note: "通过植物木薯、清新香气与除臭性能信息，呈现自然洁净的猫砂产品体验。",
+      keywords: "CAT LITTER / CASSAVA / DEODORIZATION",
+    },
+    {
+      no: "04",
+      title: "力狼 e 族优乐伴化毛膏",
+      en: "HAIRBALL CONTROL PASTE",
+      image: assetPath("/detail-pages-3/hairball-paste.png"),
+      detailKey: "hairball-paste",
+      note: "聚焦顺畅排毛、肠胃滋润与日常营养补充，建立轻盈、专业的宠物护理视觉。",
+      keywords: "HAIRBALL CARE / DIGESTION / CAT HEALTH",
+    },
+  ].map((project) => ({
+    ...project,
+    detailImages: Array.from(
+      { length: 6 },
+      (_, index) => assetPath(`/detail-pages-3/split/${project.detailKey}-${String(index + 1).padStart(2, "0")}.webp`),
+    ),
+  }));
   const newKvOrder = [6, 13, 3, 4, 1, 2, 5, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18];
   const newKvVisuals = newKvOrder.map(
     (sourceIndex, index) => ({
@@ -206,13 +250,19 @@ export default function Home() {
     ...kvLeadOrder.map((no) => kvVisuals[Number(no) - 1]),
     ...kvVisuals.filter((visual) => ![...kvPreludeOrder, ...kvLeadOrder].includes(visual.no)),
   ];
+  const addedPetKvVisuals = Array.from({ length: 4 }, (_, index) => ({
+    image: assetPath(`/kv-visuals/pet-kv-2-${String(index + 1).padStart(2, "0")}.webp`),
+    sourceNo: null,
+    contain: true,
+  }));
   const orderedKvVisuals = [
+    ...addedPetKvVisuals,
     ...newKvVisuals,
-    ...orderedOriginalKvVisuals.map((visual, index) => ({
+    ...orderedOriginalKvVisuals,
+  ].map((visual, index) => ({
       ...visual,
-      no: String(index + newKvVisuals.length + 1).padStart(2, "0"),
-    })),
-  ];
+      no: String(index + 1).padStart(2, "0"),
+    }));
   const mainImageGroups = [
     { title: "Z:SEA / EHD", en: "MEN'S CARE", files: ["main-01.jpg", "main-02.webp", "main-03.jpg", "main-04.webp"] },
     { title: "二硫化硒", en: "SCALP CARE", files: ["main-05.jpg", "main-06.jpg", "main-07.jpg"] },
@@ -545,6 +595,74 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="detail-page-three section" id="detail-page-three">
+        <div className="shell">
+          <div className="section-kicker"><span>03</span> DETAIL PAGE VISUAL / PAGE 3</div>
+          <div className="section-heading page-two-heading">
+            <h2>详情页视觉<br /><em>PAGE 3</em></h2>
+            <p>围绕猫咪零食、犬粮、猫砂与宠物营养护理，以统一的双列网格呈现四组电商详情页视觉。</p>
+          </div>
+
+          <div className="page-two-covers" aria-label="详情页 03 四组首屏设计">
+            {pageThreeProjects.map((project) => (
+              <article className="page-two-cover page-three-cover" key={`${project.no}-cover`}>
+                <div className="page-two-cover-image">
+                  <img src={project.image} alt={`${project.title}详情页首屏`} />
+                </div>
+                <div className="page-two-cover-meta">
+                  <span>{project.no} / {project.en}</span>
+                  <h3>{project.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="page-two-flow-head">
+            <span>CONTINUOUS DETAIL / 连续详情</span>
+            <p>四套页面按首图顺序向下展开，切片仅用于双列编排展示，不改变每套详情页原有的内容顺序。</p>
+          </div>
+          <div className="page-two-flows" aria-label="详情页 03 四组完整连续展示">
+            {pageThreeProjects.map((project, projectIndex) => (
+              <section className="page-two-column" key={`${project.detailKey}-flow`}>
+                <header>
+                  <span>{String(projectIndex + 1).padStart(2, "0")}</span>
+                  <div><b>{project.title}</b><small>{project.en}</small></div>
+                </header>
+                <div className="page-two-track-grid">
+                  {[project.detailImages.slice(0, 3), project.detailImages.slice(3)].map((track, trackIndex) => (
+                    <div className="page-two-track" key={`${project.detailKey}-track-${trackIndex + 1}`}>
+                      {track.map((image, index) => (
+                        <figure key={image}>
+                          <img
+                            src={image}
+                            alt={trackIndex === 0 && index === 0
+                              ? `${project.title}完整首屏展示`
+                              : `${project.title}详情页连续内容`}
+                            loading="lazy"
+                          />
+                        </figure>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+                <div className="page-two-filler" aria-label={`${project.title}视觉关键词`}>
+                  <div className="page-two-filler-copy">
+                    <span>{String(projectIndex + 1).padStart(2, "0")} / VISUAL SYSTEM</span>
+                    <p>{project.note}</p>
+                  </div>
+                  <div className="page-two-filler-foot">
+                    <i aria-hidden="true" />
+                    <small>{project.keywords}</small>
+                    <b aria-hidden="true">{String(projectIndex + 1).padStart(2, "0")}</b>
+                  </div>
+                </div>
+              </section>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       <section className="kv-showcase section" id="keyvisual-gallery">
         <div className="shell">
           <div className="section-kicker light"><span>04</span> KEY VISUAL DESIGN / 主 KV 视觉</div>
@@ -555,7 +673,7 @@ export default function Home() {
 
           <div className="kv-gallery" aria-label="主 KV 视觉作品展示">
             {orderedKvVisuals.map((visual) => (
-              <article className={`kv-card ${visual.sourceNo && kvLeadOrder.includes(visual.sourceNo) ? "kv-card-contain" : ""}`} key={visual.no}>
+              <article className={`kv-card ${visual.sourceNo && kvLeadOrder.includes(visual.sourceNo) ? "kv-card-contain" : ""} ${"contain" in visual && visual.contain ? "kv-card-fit" : ""}`} key={visual.no}>
                 <figure>
                   <img className="kv-card-backdrop" src={visual.image} alt="" aria-hidden="true" loading="lazy" />
                   <img
@@ -649,6 +767,14 @@ export default function Home() {
               <img src={assetPath("/adoption-event/flag-together.webp")} alt="和猫住共赴理享主题挂旗" loading="lazy" />
               <figcaption><span>03</span><p>和猫住，共赴理享</p></figcaption>
             </figure>
+            <figure className="adoption-flag">
+              <img src={assetPath("/adoption-event/flag-living-01.webp")} alt="理享喵生开始和猫住主题吊旗" loading="lazy" />
+              <figcaption><span>04</span><p>给流浪画上句号</p></figcaption>
+            </figure>
+            <figure className="adoption-flag">
+              <img src={assetPath("/adoption-event/flag-living-02.webp")} alt="理享喵生公益领养主题吊旗" loading="lazy" />
+              <figcaption><span>05</span><p>给理享写下冒号</p></figcaption>
+            </figure>
             <div className="adoption-wide-stack">
               <div className="adoption-material-note">
                 <span>COMMUNICATION IDEA</span>
@@ -657,7 +783,7 @@ export default function Home() {
               </div>
               <figure className="adoption-banner">
                 <img src={assetPath("/adoption-event/banner.webp")} alt="理享喵生线下活动横条幅" loading="lazy" />
-                <figcaption><span>04</span><p>商场横幅 / 远距离识别</p></figcaption>
+                <figcaption><span>06</span><p>商场横幅 / 远距离识别</p></figcaption>
               </figure>
             </div>
           </div>
