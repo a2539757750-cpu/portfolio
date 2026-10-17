@@ -233,6 +233,10 @@ export default function Home() {
       no: String(index + 1).padStart(2, "0"),
       image: assetPath(`/kv-visuals/pet-kv-${String(sourceIndex).padStart(2, "0")}.webp`),
       sourceNo: null,
+      contain: [0, 1, 2, 3].includes(index),
+      tall: index === 0,
+      topAlign: index === 0,
+      natural: [1, 2, 3].includes(index),
     }),
   );
   const kvVisuals = Array.from(
@@ -254,6 +258,7 @@ export default function Home() {
     image: assetPath(`/kv-visuals/pet-kv-2-${String(index + 1).padStart(2, "0")}.webp`),
     sourceNo: null,
     contain: true,
+    topAlign: index >= 2,
   }));
   const orderedKvVisuals = [
     ...addedPetKvVisuals,
@@ -354,6 +359,9 @@ export default function Home() {
         <div className="about-grid">
           <div className="portrait" aria-label="王明光的视觉化头像占位">
             <img className="portrait-image" src={assetPath("/portrait-guagua-light.png")} alt="瓜的个人形象" />
+            <div className="portrait-wechat" aria-label="微信二维码">
+              <img src={assetPath("/wechat-qr.png")} alt="王明光的微信二维码" />
+            </div>
             <div className="portrait-meta">
               <span>BASED IN HANGZHOU</span>
               <span>06 YEARS EXPERIENCE</span>
@@ -364,7 +372,7 @@ export default function Home() {
             <h2 className="intro-lead"><span>个人简介</span><span>工作经历</span></h2>
             <div className="intro-text">
               <p>做了 6 年视觉设计，主要专注电商视觉、品牌内容和三维产品表现。比起单纯把画面“做得好看”，我更关注设计怎么解决实际的商业问题。未来希望继续深耕快消品领域，尤其聚焦宠物行业，用设计积累长期的品牌价值，做出真正有影响力的作品。</p>
-              <p>服务过海洋至尊、EHD、SDX、周六福、怡思丁、力狼、奥丁 NEO、造砂工坊等品牌，接触过宠物食品与用品、美妆、医疗器械、男士洗护、黄金珠宝等不同品类。目前也在持续把 AI 融入自己的创意和设计工作流，希望让想法更快、更好地落地。</p>
+              <p>服务过海洋至尊、EHD、SDX、周六福、怡思丁、力狼、奥丁 NEO、造砂工坊、城市理享等品牌，接触过宠物食品与用品、美妆、医疗器械、男士洗护、黄金珠宝等不同品类。目前也在持续把 AI 融入自己的创意和设计工作流，希望让想法更快、更好地落地。</p>
             </div>
             <div className="compact-experience" aria-label="工作经历">
               <span className="compact-experience-label">WORK EXPERIENCE</span>
@@ -673,7 +681,7 @@ export default function Home() {
 
           <div className="kv-gallery" aria-label="主 KV 视觉作品展示">
             {orderedKvVisuals.map((visual) => (
-              <article className={`kv-card ${visual.sourceNo && kvLeadOrder.includes(visual.sourceNo) ? "kv-card-contain" : ""} ${"contain" in visual && visual.contain ? "kv-card-fit" : ""}`} key={visual.no}>
+              <article className={`kv-card ${visual.sourceNo && kvLeadOrder.includes(visual.sourceNo) ? "kv-card-contain" : ""} ${"contain" in visual && visual.contain ? "kv-card-fit" : ""} ${"tall" in visual && visual.tall ? "kv-card-tall" : ""} ${"topAlign" in visual && visual.topAlign ? "kv-card-top" : ""} ${"natural" in visual && visual.natural ? "kv-card-natural" : ""}`} key={visual.no}>
                 <figure>
                   <img className="kv-card-backdrop" src={visual.image} alt="" aria-hidden="true" loading="lazy" />
                   <img
@@ -705,7 +713,7 @@ export default function Home() {
             </div>
             <div className="endorser-intro">
               <b>从联合发起，到商场里的真实相遇</b>
-              <p>活动由城市理享、银泰百货杭州西湖店、和猫住与它基金共同发起。以“开始和猫住”为沟通核心，把宠物领养、责任养宠与公益互动带进商业空间，让品牌表达不止被看见，也能促成真实连接。</p>
+              <p>活动由城市理享、银泰百货杭州西湖店、和猫住与它基金共同发起。以“开始和猫住”为沟通核心，从线上预热导流到线下领养互动，让公益信息被看见，也促成真实连接。</p>
             </div>
           </div>
 
@@ -714,11 +722,12 @@ export default function Home() {
               <span>01 / PROJECT OVERVIEW</span>
               <h3>少一点流浪，<br />多一点安心。</h3>
               <dl>
-                <div><dt>负责内容</dt><dd>活动主视觉 / 物料延展 / 线下呈现</dd></div>
-                <div><dt>传播主题</dt><dd>理享喵生 / 开始和猫住</dd></div>
-                <div><dt>应用场景</dt><dd>领养展示 / 公益互动 / 商场导视</dd></div>
+                <div><dt>线上预热</dt><dd>社媒预告 / 猫咪档案 / 活动倒计时</dd></div>
+                <div><dt>线下触达</dt><dd>商场导视 / 主题展板 / 领养咨询</dd></div>
+                <div><dt>活动玩法</dt><dd>公益问答 / 集章打卡 / 合影分享</dd></div>
+                <div><dt>传播路径</dt><dd>线上种草 → 到店参与 → 社交扩散</dd></div>
               </dl>
-              <p>以温暖但不过度煽情的方式降低公益议题的距离感，让领养信息、品牌联合与现场体验在同一套视觉语言中自然发生。</p>
+              <p>用统一视觉串联预热、到店与分享，让活动不止停留在线下陈列，而是形成一条简洁完整的参与路径。</p>
             </div>
             <figure className="endorser-overview-art">
               <img src={assetPath("/adoption-event/main-kv.webp")} alt="西湖银泰百货理享喵生宠物领养活动主视觉" loading="lazy" />
